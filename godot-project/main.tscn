@@ -1,6 +1,7 @@
-[gd_scene load_steps=43 format=3 uid="uid://dydhpglcalbtv"]
+[gd_scene load_steps=44 format=3 uid="uid://dydhpglcalbtv"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_7js8b"]
+[ext_resource type="Texture2D" uid="uid://bfumjxxmbwpfa" path="res://sprites/NES_IceHockey_IceRink_WithGoal.png" id="1_08qa6"]
 [ext_resource type="Texture2D" uid="uid://b7e1h6rkfhapd" path="res://sprites/Team_A_T1_PSkate_East_strip4.png" id="1_gpkkd"]
 [ext_resource type="Texture2D" uid="uid://c0jv2jrs0u4e2" path="res://sprites/Team_A_T1_PSkate_North_strip4.png" id="2_4dnn3"]
 [ext_resource type="Texture2D" uid="uid://bh24i7m2ehx6d" path="res://sprites/Team_A_T1_PSkate_NorthEast_strip4.png" id="3_34p04"]
@@ -279,11 +280,18 @@ animations = [{
 
 [node name="Main" type="Node2D"]
 
+[node name="Ring" type="Node2D" parent="."]
+texture_filter = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Ring"]
+position = Vector2(356, 120)
+texture = ExtResource("1_08qa6")
+
 [node name="Player" type="Node2D" parent="."]
 script = ExtResource("1_7js8b")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 texture_filter = 1
-position = Vector2(12, 12)
+position = Vector2(356, 115)
 sprite_frames = SubResource("SpriteFrames_522th")
 animation = &"skate_northwest"
