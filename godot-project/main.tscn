@@ -284,7 +284,6 @@ animations = [{
 texture_filter = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="Ring"]
-position = Vector2(356, 120)
 texture = ExtResource("1_08qa6")
 
 [node name="Player" type="Node2D" parent="."]
@@ -292,6 +291,11 @@ script = ExtResource("1_7js8b")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 texture_filter = 1
-position = Vector2(356, 115)
 sprite_frames = SubResource("SpriteFrames_522th")
 animation = &"skate_northwest"
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+limit_left = -355
+limit_top = -125
+limit_right = 355
+limit_bottom = 125
