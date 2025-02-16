@@ -1,4 +1,4 @@
-extends Node2D
+extends CharacterBody2D
 
 class_name Player
 
@@ -26,6 +26,10 @@ func _physics_process(delta):
 		last_direction = input_vector
 	else:
 		play_skate_animation(last_direction)
+		
+	# If the player is controlling the puck, update the puck's offset
+	if puck:
+		puck.update_offset_based_on_direction(last_direction)
 		
 	# Handle passing and shooting the puck
 	if puck:
