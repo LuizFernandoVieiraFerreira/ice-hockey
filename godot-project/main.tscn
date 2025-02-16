@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://dydhpglcalbtv"]
+[gd_scene load_steps=49 format=3 uid="uid://dydhpglcalbtv"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_7js8b"]
 [ext_resource type="Texture2D" uid="uid://bfumjxxmbwpfa" path="res://sprites/NES_IceHockey_IceRink_WithGoal.png" id="1_08qa6"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bvewotqxcdlvj" path="res://sprites/Team_A_T1_PSkate_West_strip4.png" id="7_fsh1r"]
 [ext_resource type="Script" path="res://puck.gd" id="11_fgq4r"]
 [ext_resource type="Texture2D" uid="uid://cpsgaewdg4b7w" path="res://sprites/puck.png" id="12_8askg"]
+[ext_resource type="PackedScene" uid="uid://bxh3ti58qnxua" path="res://touch_controls.tscn" id="13_nnry8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0vatw"]
 size = Vector2(6, 4)
@@ -287,6 +288,14 @@ animations = [{
 }]
 
 [node name="Main" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TouchControls" parent="Control" instance=ExtResource("13_nnry8")]
 
 [node name="Ring" type="Node2D" parent="."]
 texture_filter = 1
