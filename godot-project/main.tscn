@@ -295,11 +295,9 @@ texture_filter = 1
 texture = ExtResource("1_08qa6")
 
 [node name="Area2D" type="Area2D" parent="Ring"]
-process_mode = 4
-visible = false
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ring/Area2D"]
-polygon = PackedVector2Array(-235, -81, -259, -66, -339, 95, -323, 103, 326, 103, 339, 95, 259, -65, 236, -80, -234, -81)
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Ring/Area2D"]
+polygon = PackedVector2Array(-236, -81, -259, -66, -339, 95, -321, 104, 322, 104, 340, 95, 259, -66, 236, -81, -234, -81, -234, -120, 356, -120, 356, 120, -356, 120, -355, -120, -236, -120, -234, -81)
 
 [node name="Puck" type="Node2D" parent="."]
 position = Vector2(30, 0)
