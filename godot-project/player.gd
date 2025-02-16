@@ -1,6 +1,10 @@
 extends Node2D
 
+class_name Player
+
 @onready var animated_sprite = $AnimatedSprite2D
+
+var puck: Node2D = null
 
 var speed = 100
 var last_direction = Vector2(1, 0)
@@ -15,13 +19,22 @@ func _physics_process(delta):
 
 	# Move the player
 	position += input_vector * speed * delta
-
+	
 	# Determine facing direction and play corresponding animation
 	if input_vector != Vector2.ZERO:
 		play_skate_animation(input_vector)
 		last_direction = input_vector
 	else:
 		play_skate_animation(last_direction)
+		
+	# Handle passing and shooting the puck
+	if puck:
+		if Input.is_action_just_pressed("pass"):
+			puck.pass_puck(last_direction)
+			puck = null
+		elif Input.is_action_just_pressed("shoot"):
+			puck.shoot_puck(last_direction)
+			puck = null
 
 func play_skate_animation(direction: Vector2):
 	if direction.y < 0 and direction.x == 0:
@@ -40,3 +53,7 @@ func play_skate_animation(direction: Vector2):
 		animated_sprite.play("skate_west")
 	elif direction.y < 0 and direction.x < 0:
 		animated_sprite.play("skate_northwest")
+
+func pick_up_puck(new_puck: Node2D):
+	puck = new_puck
+	puck.pick_up_puck(self)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://dydhpglcalbtv"]
+[gd_scene load_steps=50 format=3 uid="uid://dydhpglcalbtv"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_7js8b"]
 [ext_resource type="Texture2D" uid="uid://bfumjxxmbwpfa" path="res://sprites/NES_IceHockey_IceRink_WithGoal.png" id="1_08qa6"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://jjulc6lnaolh" path="res://sprites/Team_A_T1_PSkate_NorthWest_strip4.png" id="5_vu0pe"]
 [ext_resource type="Texture2D" uid="uid://bmyds88qee315" path="res://sprites/Team_A_T1_PSkate_SouthWest_strip4.png" id="6_a2wlm"]
 [ext_resource type="Texture2D" uid="uid://bvewotqxcdlvj" path="res://sprites/Team_A_T1_PSkate_West_strip4.png" id="7_fsh1r"]
+[ext_resource type="Script" path="res://puck.gd" id="11_fgq4r"]
+[ext_resource type="Texture2D" uid="uid://cpsgaewdg4b7w" path="res://sprites/puck.png" id="12_8askg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2hhkv"]
 atlas = ExtResource("1_gpkkd")
@@ -278,6 +280,18 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f2dj6"]
+size = Vector2(10, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7nhf6"]
+size = Vector2(10, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0vatw"]
+size = Vector2(6, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ri6kf"]
+size = Vector2(11, 24)
+
 [node name="Main" type="Node2D"]
 
 [node name="Ring" type="Node2D" parent="."]
@@ -286,7 +300,16 @@ texture_filter = 1
 [node name="Sprite2D" type="Sprite2D" parent="Ring"]
 texture = ExtResource("1_08qa6")
 
+[node name="Area2D" type="Area2D" parent="Ring"]
+process_mode = 4
+visible = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ring/Area2D"]
+polygon = PackedVector2Array(-235, -81, -259, -66, -339, 95, -323, 103, 326, 103, 339, 95, 259, -65, 236, -80, -234, -81)
+
 [node name="Player" type="Node2D" parent="."]
+process_mode = 4
+visible = false
 script = ExtResource("1_7js8b")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
@@ -295,6 +318,54 @@ sprite_frames = SubResource("SpriteFrames_522th")
 animation = &"skate_northwest"
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+limit_left = -355
+limit_top = -125
+limit_right = 355
+limit_bottom = 125
+
+[node name="Area2D" type="Area2D" parent="Player"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
+shape = SubResource("RectangleShape2D_f2dj6")
+
+[node name="Puck" type="Node2D" parent="."]
+position = Vector2(30, 0)
+script = ExtResource("11_fgq4r")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="Puck"]
+process_mode = 4
+visible = false
+gravity_scale = 0.0
+lock_rotation = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Puck/RigidBody2D"]
+texture = ExtResource("12_8askg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Puck/RigidBody2D"]
+shape = SubResource("RectangleShape2D_7nhf6")
+
+[node name="Area2D" type="Area2D" parent="Puck"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Puck/Area2D"]
+shape = SubResource("RectangleShape2D_0vatw")
+
+[node name="Sprite2D" type="Sprite2D" parent="Puck"]
+texture_filter = 1
+texture = ExtResource("12_8askg")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_7js8b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_ri6kf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_522th")
+animation = &"skate_northwest"
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 limit_left = -355
 limit_top = -125
 limit_right = 355
