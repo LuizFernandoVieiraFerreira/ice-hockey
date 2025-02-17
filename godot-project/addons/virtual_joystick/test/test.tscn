@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bq2sqb1u1l5ve"]
+[gd_scene load_steps=5 format=3 uid="uid://bq2sqb1u1l5ve"]
 
 [ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="1_4k4lh"]
 [ext_resource type="Texture2D" uid="uid://so5wjrujjpwh" path="res://icon.svg" id="2_44wa8"]
+[ext_resource type="Texture2D" uid="uid://1coifod68x5x" path="res://sprites/TouchScreenButton_A.png" id="2_punk7"]
 [ext_resource type="Script" path="res://addons/virtual_joystick/test/player.gd" id="3_dsmxw"]
 
 [node name="Test" type="Node2D"]
@@ -25,6 +26,12 @@ grow_horizontal = 0
 scale = Vector2(0.2, 0.2)
 joystick_mode = 1
 use_input_actions = false
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="UI"]
+texture_filter = 2
+position = Vector2(99, 61)
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("2_punk7")
 
 [node name="Player" type="Sprite2D" parent="." node_paths=PackedStringArray("joystick_left", "joystick_right")]
 position = Vector2(600, 300)
