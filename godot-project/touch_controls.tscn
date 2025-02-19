@@ -7,8 +7,9 @@
 [node name="TouchControls" type="CanvasLayer"]
 
 [node name="Virtual Joystick" parent="." instance=ExtResource("1_527k6")]
-offset_top = -60.0
-offset_bottom = 240.0
+offset_top = -80.0
+offset_right = 400.0
+offset_bottom = 320.0
 scale = Vector2(0.2, 0.2)
 
 [node name="Control" type="Control" parent="."]
@@ -25,10 +26,11 @@ grow_vertical = 0
 
 [node name="TouchScreenButton_A" type="TouchScreenButton" parent="Control"]
 texture_filter = 2
+position = Vector2(-10, -12)
 scale = Vector2(0.4, 0.4)
 texture_normal = ExtResource("2_6kx2g")
 
 [node name="TouchScreenButton_B" type="TouchScreenButton" parent="Control"]
-position = Vector2(-41, 0)
+position = Vector2(-56, -12)
 scale = Vector2(0.4, 0.4)
 texture_normal = ExtResource("2_51qb5")

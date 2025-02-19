@@ -20,7 +20,7 @@ config/icon="res://ice-hockey.png"
 
 window/size/viewport_width=1024
 window/size/viewport_height=960
-window/size/resizable=false
+window/stretch/mode="viewport"
 window/stretch/scale=4.0
 
 [editor_plugins]

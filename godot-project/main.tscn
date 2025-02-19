@@ -335,6 +335,6 @@ animation = &"skate_northwest"
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 limit_left = -355
-limit_top = -125
+limit_top = -120
 limit_right = 355
-limit_bottom = 125
+limit_bottom = 120
