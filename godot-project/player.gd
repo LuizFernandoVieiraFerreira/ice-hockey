@@ -50,7 +50,7 @@ func _physics_process(delta):
 			return
 
 	# Move player (prevents stopping on puck collision)
-	move_and_slide()
+	#move_and_slide()
 
 	# Move the player
 	#position += input_vector * speed * delta
