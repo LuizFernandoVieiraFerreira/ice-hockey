@@ -26,8 +26,34 @@ func _physics_process(delta):
 	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 	input_vector = input_vector.normalized()
 
+	# Move only if no puck is held
+	#if puck == null:
+		#var collision = move_and_collide(input_vector * speed * delta)
+		#if collision:
+			#var collider = collision.get_collider()
+			## If colliding with the puck, pick it up
+			#if collider is Puck:
+				#print("Player picked up the puck!")
+				#pick_up_puck(collider)
+				#return
+
+	# Move the player and check for collisions
+	var collision = move_and_collide(input_vector * speed * delta)
+#
+	if collision:
+		var collider = collision.get_collider()
+		
+		# Check if the collider is the puck
+		if collider is CharacterBody2D and collider.name == "Puck":
+			print("Player picked up the puck!")
+			pick_up_puck(collider)
+			return
+
+	# Move player (prevents stopping on puck collision)
+	move_and_slide()
+
 	# Move the player
-	position += input_vector * speed * delta
+	#position += input_vector * speed * delta
 	
 	# Determine facing direction and play corresponding animation
 	if input_vector != Vector2.ZERO:
@@ -49,6 +75,7 @@ func _physics_process(delta):
 			var shot_direction = (goal_position - global_position).normalized()
 			play_shoot_animation(shot_direction)
 			puck.shoot_puck(last_direction)
+			drop_puck()
 			puck = null
 
 func play_skate_animation(direction: Vector2):
@@ -92,3 +119,14 @@ func _on_animation_finished():
 func pick_up_puck(new_puck: Node2D):
 	puck = new_puck
 	puck.pick_up_puck(self)
+	
+	# **Disable collisions with puck**
+	puck.set_deferred("collision_layer", 0)
+	puck.set_deferred("collision_mask", 0)
+	
+func drop_puck():
+	if puck:
+		# **Re-enable collisions when dropping**
+		puck.set_deferred("collision_layer", 1)
+		puck.set_deferred("collision_mask", 1)
+		puck = null
