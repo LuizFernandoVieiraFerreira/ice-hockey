@@ -1,239 +1,225 @@
-[gd_scene load_steps=78 format=3 uid="uid://dydhpglcalbtv"]
+[gd_scene load_steps=68 format=3 uid="uid://baw6qjxkykhe1"]
 
-[ext_resource type="Script" path="res://game_manager.gd" id="1_5mf3m"]
-[ext_resource type="Script" path="res://player.gd" id="1_7js8b"]
-[ext_resource type="Texture2D" uid="uid://bfumjxxmbwpfa" path="res://sprites/NES_IceHockey_IceRink_WithGoal.png" id="1_08qa6"]
-[ext_resource type="Texture2D" uid="uid://b7e1h6rkfhapd" path="res://sprites/Team_A_T1_PSkate_East_strip4.png" id="1_gpkkd"]
-[ext_resource type="Texture2D" uid="uid://c0jv2jrs0u4e2" path="res://sprites/Team_A_T1_PSkate_North_strip4.png" id="2_4dnn3"]
-[ext_resource type="Texture2D" uid="uid://bh24i7m2ehx6d" path="res://sprites/Team_A_T1_PSkate_NorthEast_strip4.png" id="3_34p04"]
-[ext_resource type="Texture2D" uid="uid://dws45tcf8r3p7" path="res://sprites/Team_A_T1_PSkate_South_strip4.png" id="4_v6r6i"]
-[ext_resource type="Script" path="res://puck.gd" id="5_1gfuh"]
-[ext_resource type="Texture2D" uid="uid://bhxkmujj2v7r5" path="res://sprites/Team_A_T1_PSkate_SouthEast_strip4.png" id="5_fpv38"]
-[ext_resource type="Texture2D" uid="uid://jjulc6lnaolh" path="res://sprites/Team_A_T1_PSkate_NorthWest_strip4.png" id="5_vu0pe"]
-[ext_resource type="Texture2D" uid="uid://c4m4aya2d2eh3" path="res://sprites/Team_A_T1_Shoot_East_strip3.png" id="6_2ayyw"]
-[ext_resource type="Texture2D" uid="uid://bmyds88qee315" path="res://sprites/Team_A_T1_PSkate_SouthWest_strip4.png" id="6_a2wlm"]
-[ext_resource type="Script" path="res://team_manager.gd" id="6_feeeb"]
-[ext_resource type="Texture2D" uid="uid://bvewotqxcdlvj" path="res://sprites/Team_A_T1_PSkate_West_strip4.png" id="7_fsh1r"]
-[ext_resource type="Texture2D" uid="uid://drhjjj3c28ig4" path="res://sprites/Team_A_T1_Shoot_NorthEast_strip3.png" id="7_vvpmp"]
-[ext_resource type="PackedScene" uid="uid://baw6qjxkykhe1" path="res://player.tscn" id="8_ka0im"]
-[ext_resource type="Texture2D" uid="uid://gh06cmtayk18" path="res://sprites/Team_A_T1_Shoot_NorthWest_strip3.png" id="8_ok7y3"]
-[ext_resource type="Texture2D" uid="uid://vvjfh1tbw4o" path="res://sprites/Team_A_T1_Shoot_SouthEast_strip3.png" id="9_gonni"]
-[ext_resource type="Texture2D" uid="uid://bjb0knutc71hr" path="res://sprites/Team_A_T1_Shoot_SouthWest_strip3.png" id="10_wbppy"]
-[ext_resource type="Script" path="res://legacy_puck.gd" id="11_fgq4r"]
-[ext_resource type="Texture2D" uid="uid://xlqh5amkie1i" path="res://sprites/Team_A_T1_Shoot_West_strip3.png" id="11_hi4pa"]
-[ext_resource type="Texture2D" uid="uid://cpsgaewdg4b7w" path="res://sprites/puck.png" id="12_8askg"]
-[ext_resource type="PackedScene" uid="uid://bxh3ti58qnxua" path="res://touch_controls.tscn" id="13_nnry8"]
+[ext_resource type="Script" path="res://player.gd" id="1_ij2tm"]
+[ext_resource type="Texture2D" uid="uid://c4m4aya2d2eh3" path="res://sprites/Team_A_T1_Shoot_East_strip3.png" id="2_immnv"]
+[ext_resource type="Texture2D" uid="uid://drhjjj3c28ig4" path="res://sprites/Team_A_T1_Shoot_NorthEast_strip3.png" id="3_jjgps"]
+[ext_resource type="Texture2D" uid="uid://gh06cmtayk18" path="res://sprites/Team_A_T1_Shoot_NorthWest_strip3.png" id="4_sx7u7"]
+[ext_resource type="Texture2D" uid="uid://vvjfh1tbw4o" path="res://sprites/Team_A_T1_Shoot_SouthEast_strip3.png" id="5_0rbxk"]
+[ext_resource type="Texture2D" uid="uid://bjb0knutc71hr" path="res://sprites/Team_A_T1_Shoot_SouthWest_strip3.png" id="6_sj68q"]
+[ext_resource type="Texture2D" uid="uid://xlqh5amkie1i" path="res://sprites/Team_A_T1_Shoot_West_strip3.png" id="7_0x4t6"]
+[ext_resource type="Texture2D" uid="uid://b7e1h6rkfhapd" path="res://sprites/Team_A_T1_PSkate_East_strip4.png" id="8_cupqq"]
+[ext_resource type="Texture2D" uid="uid://c0jv2jrs0u4e2" path="res://sprites/Team_A_T1_PSkate_North_strip4.png" id="9_4hmal"]
+[ext_resource type="Texture2D" uid="uid://bh24i7m2ehx6d" path="res://sprites/Team_A_T1_PSkate_NorthEast_strip4.png" id="10_n74wi"]
+[ext_resource type="Texture2D" uid="uid://jjulc6lnaolh" path="res://sprites/Team_A_T1_PSkate_NorthWest_strip4.png" id="11_qlaw6"]
+[ext_resource type="Texture2D" uid="uid://dws45tcf8r3p7" path="res://sprites/Team_A_T1_PSkate_South_strip4.png" id="12_a4pds"]
+[ext_resource type="Texture2D" uid="uid://bhxkmujj2v7r5" path="res://sprites/Team_A_T1_PSkate_SouthEast_strip4.png" id="13_t3o3b"]
+[ext_resource type="Texture2D" uid="uid://bmyds88qee315" path="res://sprites/Team_A_T1_PSkate_SouthWest_strip4.png" id="14_80aci"]
+[ext_resource type="Texture2D" uid="uid://bvewotqxcdlvj" path="res://sprites/Team_A_T1_PSkate_West_strip4.png" id="15_ukdct"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0vatw"]
-size = Vector2(6, 4)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wvoil"]
-size = Vector2(6, 4)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ri6kf"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_swelw"]
 size = Vector2(11, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_88bo3"]
-atlas = ExtResource("6_2ayyw")
+atlas = ExtResource("2_immnv")
 region = Rect2(0, 0, 32, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qnbdg"]
-atlas = ExtResource("6_2ayyw")
+atlas = ExtResource("2_immnv")
 region = Rect2(32, 0, 32, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w2gvs"]
-atlas = ExtResource("6_2ayyw")
+atlas = ExtResource("2_immnv")
 region = Rect2(64, 0, 32, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v7t7q"]
-atlas = ExtResource("7_vvpmp")
+atlas = ExtResource("3_jjgps")
 region = Rect2(0, 0, 32, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_33g55"]
-atlas = ExtResource("7_vvpmp")
+atlas = ExtResource("3_jjgps")
 region = Rect2(32, 0, 32, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cpfxg"]
-atlas = ExtResource("7_vvpmp")
+atlas = ExtResource("3_jjgps")
 region = Rect2(64, 0, 32, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sr40k"]
-atlas = ExtResource("8_ok7y3")
+atlas = ExtResource("4_sx7u7")
 region = Rect2(0, 0, 32, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d2rih"]
-atlas = ExtResource("8_ok7y3")
+atlas = ExtResource("4_sx7u7")
 region = Rect2(32, 0, 32, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5mgx0"]
-atlas = ExtResource("8_ok7y3")
+atlas = ExtResource("4_sx7u7")
 region = Rect2(64, 0, 32, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xw0dx"]
-atlas = ExtResource("9_gonni")
+atlas = ExtResource("5_0rbxk")
 region = Rect2(0, 0, 32, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_as5u5"]
-atlas = ExtResource("9_gonni")
+atlas = ExtResource("5_0rbxk")
 region = Rect2(32, 0, 32, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5qnce"]
-atlas = ExtResource("9_gonni")
+atlas = ExtResource("5_0rbxk")
 region = Rect2(64, 0, 32, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_65ac5"]
-atlas = ExtResource("10_wbppy")
+atlas = ExtResource("6_sj68q")
 region = Rect2(0, 0, 32, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iutwj"]
-atlas = ExtResource("10_wbppy")
+atlas = ExtResource("6_sj68q")
 region = Rect2(32, 0, 32, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aoflt"]
-atlas = ExtResource("10_wbppy")
+atlas = ExtResource("6_sj68q")
 region = Rect2(64, 0, 32, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dx3u7"]
-atlas = ExtResource("11_hi4pa")
+atlas = ExtResource("7_0x4t6")
 region = Rect2(0, 0, 32, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_27bqx"]
-atlas = ExtResource("11_hi4pa")
+atlas = ExtResource("7_0x4t6")
 region = Rect2(32, 0, 32, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a841f"]
-atlas = ExtResource("11_hi4pa")
+atlas = ExtResource("7_0x4t6")
 region = Rect2(64, 0, 32, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2hhkv"]
-atlas = ExtResource("1_gpkkd")
+atlas = ExtResource("8_cupqq")
 region = Rect2(0, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7m28h"]
-atlas = ExtResource("1_gpkkd")
+atlas = ExtResource("8_cupqq")
 region = Rect2(24, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gcs0m"]
-atlas = ExtResource("1_gpkkd")
+atlas = ExtResource("8_cupqq")
 region = Rect2(48, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_83v3l"]
-atlas = ExtResource("1_gpkkd")
+atlas = ExtResource("8_cupqq")
 region = Rect2(72, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lj4md"]
-atlas = ExtResource("2_4dnn3")
+atlas = ExtResource("9_4hmal")
 region = Rect2(0, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eqf8q"]
-atlas = ExtResource("2_4dnn3")
+atlas = ExtResource("9_4hmal")
 region = Rect2(24, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_klrim"]
-atlas = ExtResource("2_4dnn3")
+atlas = ExtResource("9_4hmal")
 region = Rect2(48, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ju613"]
-atlas = ExtResource("2_4dnn3")
+atlas = ExtResource("9_4hmal")
 region = Rect2(72, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ua1w1"]
-atlas = ExtResource("3_34p04")
+atlas = ExtResource("10_n74wi")
 region = Rect2(0, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nuvdh"]
-atlas = ExtResource("3_34p04")
+atlas = ExtResource("10_n74wi")
 region = Rect2(24, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fwvb3"]
-atlas = ExtResource("3_34p04")
+atlas = ExtResource("10_n74wi")
 region = Rect2(48, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nyspl"]
-atlas = ExtResource("3_34p04")
+atlas = ExtResource("10_n74wi")
 region = Rect2(72, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r1jsv"]
-atlas = ExtResource("5_vu0pe")
+atlas = ExtResource("11_qlaw6")
 region = Rect2(0, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7vws4"]
-atlas = ExtResource("5_vu0pe")
+atlas = ExtResource("11_qlaw6")
 region = Rect2(24, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x3wp4"]
-atlas = ExtResource("5_vu0pe")
+atlas = ExtResource("11_qlaw6")
 region = Rect2(48, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tl25b"]
-atlas = ExtResource("5_vu0pe")
+atlas = ExtResource("11_qlaw6")
 region = Rect2(72, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jjnlh"]
-atlas = ExtResource("4_v6r6i")
+atlas = ExtResource("12_a4pds")
 region = Rect2(0, 0, 24, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ady1h"]
-atlas = ExtResource("4_v6r6i")
+atlas = ExtResource("12_a4pds")
 region = Rect2(24, 0, 24, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ag5ni"]
-atlas = ExtResource("4_v6r6i")
+atlas = ExtResource("12_a4pds")
 region = Rect2(48, 0, 24, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0hqog"]
-atlas = ExtResource("4_v6r6i")
+atlas = ExtResource("12_a4pds")
 region = Rect2(72, 0, 24, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cab54"]
-atlas = ExtResource("5_fpv38")
+atlas = ExtResource("13_t3o3b")
 region = Rect2(0, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_427gu"]
-atlas = ExtResource("5_fpv38")
+atlas = ExtResource("13_t3o3b")
 region = Rect2(24, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6ugqn"]
-atlas = ExtResource("5_fpv38")
+atlas = ExtResource("13_t3o3b")
 region = Rect2(48, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k0xo6"]
-atlas = ExtResource("5_fpv38")
+atlas = ExtResource("13_t3o3b")
 region = Rect2(72, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_73mru"]
-atlas = ExtResource("6_a2wlm")
+atlas = ExtResource("14_80aci")
 region = Rect2(0, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_785kr"]
-atlas = ExtResource("6_a2wlm")
+atlas = ExtResource("14_80aci")
 region = Rect2(24, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_237r3"]
-atlas = ExtResource("6_a2wlm")
+atlas = ExtResource("14_80aci")
 region = Rect2(48, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_66vo8"]
-atlas = ExtResource("6_a2wlm")
+atlas = ExtResource("14_80aci")
 region = Rect2(72, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uiees"]
-atlas = ExtResource("7_fsh1r")
+atlas = ExtResource("15_ukdct")
 region = Rect2(0, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_asrs3"]
-atlas = ExtResource("7_fsh1r")
+atlas = ExtResource("15_ukdct")
 region = Rect2(24, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2xyi0"]
-atlas = ExtResource("7_fsh1r")
+atlas = ExtResource("15_ukdct")
 region = Rect2(48, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4peuf"]
-atlas = ExtResource("7_fsh1r")
+atlas = ExtResource("15_ukdct")
 region = Rect2(72, 0, 24, 24)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_522th"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_0p0sm"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -456,89 +442,20 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Main" type="Node2D"]
-script = ExtResource("1_5mf3m")
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_ij2tm")
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="TouchControls" parent="Control" instance=ExtResource("13_nnry8")]
-
-[node name="Ring" type="Node2D" parent="."]
-texture_filter = 1
-
-[node name="Sprite2D" type="Sprite2D" parent="Ring"]
-texture = ExtResource("1_08qa6")
-
-[node name="Area2D" type="Area2D" parent="Ring"]
-process_mode = 4
-visible = false
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ring/Area2D"]
-polygon = PackedVector2Array(-236, -81, -259, -66, -339, 95, -321, 104, 322, 104, 340, 95, 259, -66, 236, -81, -234, -81, -234, -120, 356, -120, 356, 120, -356, 120, -355, -120, -236, -120, -234, -81)
-
-[node name="LegacyPuck" type="Node2D" parent="."]
-process_mode = 4
-visible = false
-position = Vector2(30, 0)
-script = ExtResource("11_fgq4r")
-
-[node name="Area2D" type="Area2D" parent="LegacyPuck"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LegacyPuck/Area2D"]
-shape = SubResource("RectangleShape2D_0vatw")
-
-[node name="Sprite2D" type="Sprite2D" parent="LegacyPuck"]
-texture_filter = 1
-texture = ExtResource("12_8askg")
-
-[node name="Puck" type="CharacterBody2D" parent="." node_paths=PackedStringArray("goal_area") groups=["puck"]]
-position = Vector2(30, 0)
-up_direction = Vector2(1, 0)
-script = ExtResource("5_1gfuh")
-goal_area = NodePath("../Goal")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Puck"]
-shape = SubResource("RectangleShape2D_wvoil")
-
-[node name="Sprite2D" type="Sprite2D" parent="Puck"]
-texture_filter = 1
-texture = ExtResource("12_8askg")
-
-[node name="Team1" type="Node2D" parent="."]
-script = ExtResource("6_feeeb")
-player_scene = ExtResource("8_ka0im")
-
-[node name="Player" type="CharacterBody2D" parent="."]
-process_mode = 4
-visible = false
-script = ExtResource("1_7js8b")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 0)
-shape = SubResource("RectangleShape2D_ri6kf")
+shape = SubResource("RectangleShape2D_swelw")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_522th")
-animation = &"shoot_west"
+sprite_frames = SubResource("SpriteFrames_0p0sm")
+animation = &"skate_east"
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="Camera2D" type="Camera2D" parent="."]
 limit_left = -355
 limit_top = -120
 limit_right = 355
 limit_bottom = 120
-
-[node name="Goal" type="Area2D" parent="." groups=["goal"]]
-position = Vector2(255, 0)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Goal"]
-polygon = PackedVector2Array(-5, -8, -5, -17, 4, 1, 4, 12)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(-236, -81, -259, -66, -339, 95, -321, 104, 322, 104, 340, 95, 259, -66, 236, -81, -234, -81, -234, -120, 356, -120, 356, 120, -356, 120, -355, -120, -236, -120, -234, -81)

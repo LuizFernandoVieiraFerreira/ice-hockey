@@ -12,10 +12,15 @@ var is_shooting = false
 
 var goal_position = Vector2(255, 0)
 
+var controlled: bool = false
+
 func _ready():
 	animated_sprite.animation_finished.connect(_on_animation_finished)
 
 func _physics_process(delta):
+	if not controlled:
+		return
+		
 	if is_shooting:
 		return
 		
@@ -130,3 +135,6 @@ func drop_puck():
 		puck.set_deferred("collision_layer", 1)
 		puck.set_deferred("collision_mask", 1)
 		puck = null
+
+func set_controlled(value: bool):
+	controlled = value

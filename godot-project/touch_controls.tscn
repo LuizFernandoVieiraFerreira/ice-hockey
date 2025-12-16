@@ -29,8 +29,10 @@ texture_filter = 2
 position = Vector2(-10, -12)
 scale = Vector2(0.4, 0.4)
 texture_normal = ExtResource("2_6kx2g")
+action = "shoot"
 
 [node name="TouchScreenButton_B" type="TouchScreenButton" parent="Control"]
 position = Vector2(-56, -12)
 scale = Vector2(0.4, 0.4)
 texture_normal = ExtResource("2_51qb5")
+action = "pass"
